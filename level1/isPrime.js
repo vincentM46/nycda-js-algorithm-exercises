@@ -2,9 +2,18 @@
  * Determines whether the given number is a prime number, i.e. it is not divisible by any integers other than 1 and itself.
  * Returns true or false.
  */
-function isPrime() {
-
+function isPrime(num) {
+  if (num === 1) {
+    return false;
+  }
+  for (let a = 2; a <= Math.sqrt(num); a++) {
+    if (num % a === 0) {
+      return false;
+    }
+  }
+  return true
 }
+
 
 describe('isPrime', function() {
   const assert = require("chai").assert;
